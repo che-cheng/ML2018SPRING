@@ -28,4 +28,4 @@ reconstruct = np.array(reconstruct)
 idx = int(os.path.splitext(sys.argv[2])[0])
 M = reconstruct[idx]
 M = M.astype(np.uint8).reshape(600,600,3)
-io.imsave(sys.argv[2], M)
+io.imsave('reconstruction.jpg', M)
