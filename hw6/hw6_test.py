@@ -10,8 +10,6 @@ users_list =  [i.strip().split("::") for i in open(sys.argv[4] , 'r', encoding='
 users_df = pd.DataFrame(users_list, columns = ['UserID', 'Gender', 'Age', 'Occupation', 'Zip-code'], dtype = int)
 movies_list = [i.strip().split("::") for i in open(sys.argv[3], 'r', encoding='ISO-8859-1').readlines()][1:]
 
-# test_df = test_df.merge(users_df, how='inner')
-
 model = load_model(model_path)
 predict = model.predict([test_df.UserID, test_df.MovieID])
 
